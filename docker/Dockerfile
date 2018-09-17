@@ -1,0 +1,11 @@
+FROM openjdk:8
+
+EXPOSE 9000
+
+ENV APP_HOME /usr/src/app
+
+COPY target/MyBLOG-0.0.1-SNAPSHOT.jar $APP_HOME/MyBLOG.jar
+
+WORKDIR $APP_HOME
+
+ENTRYPOINT exec java -jar MyBLOG.jar
