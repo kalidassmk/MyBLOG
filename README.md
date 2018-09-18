@@ -22,28 +22,6 @@ There are several ways to run the application. You can run it from the command l
 
 Once the app starts, go to the web browser and visit `http://localhost:9001/`
 
-### Maven Wrapper
-
-#### Using the Maven Plugin
-
-Go to the root folder of the application and type:
-```bash
-$ chmod +x scripts/mvnw
-$ scripts/mvnw spring-boot:run
-```
-
-#### Using Executable Jar
-
-Or you can build the JAR file with
-```bash
-$ scripts/mvnw clean package
-```
-
-Then you can run the JAR file:
-```bash
-$ java -jar target/MyBlog-0.0.1-SNAPSHOT.jar
-```
-
 ### Maven
 
 Open a terminal and run the following commands to ensure that you have valid versions of Java and Maven installed:
@@ -62,71 +40,37 @@ Maven home: /usr/local/Cellar/maven/3.3.9/libexec
 Java version: 1.8.0_102, vendor: Oracle Corporation
 ```
 
-#### Using the Maven Plugin
-
-The Spring Boot Maven plugin includes a run goal that can be used to quickly compile and run your application.
-Applications run in an exploded form, as they do in your IDE.
-The following example shows a typical Maven command to run a Spring Boot application:
-
 ```bash
-$ mvn spring-boot:run
+$ docker -v
+Docker version 18.06.1-ce, build e68fc7a
 ```
-
-#### Using Executable Jar
-
-To create an executable jar run:
-
-```bash
-$ mvn clean package
-```
-
-To run that application, use the java -jar command, as follows:
-
-```bash
-$ java -jar target/MyBlog-0.0.1-SNAPSHOT.jar
-```
-
-To exit the application, press **ctrl-c**.
-
-### Docker
+### Docker 
 
 It is possible to run **MyBlog** using Docker:
 
-Build Docker image:
+1) Build Docker image:
 ```bash
 $ mvn clean package
-$ docker build -t MyBlog:dev -f docker/Dockerfile .
+$ docker build -f Dockerfile -t myblog .
 ```
 
-Run Docker container:
+2) Run Docker container:
 ```bash
-$ docker run --rm -i -p 9001:9001 \
-      --name MyBlog \
-      MyBlog:dev
+$ docker run -p 9001:9001 myblog
 ```
+3. `use post man to test the below API's `
+4. `Authentication using a X-Auth-Token header for REST APIs`
+5. `base path http://localhost:9001`
 
-##### Helper script
-
-It is possible to run all of the above with helper script:
-
-```bash
-$ chmod +x scripts/run_docker.sh
-$ scripts/run_docker.sh
-```
 
 ## Docker
 
-Folder **docker** contains:
+Poject path contain the **Dockerfile** file:
 
-* **docker/MyBlog/Dockerfile** - Docker build file for executing MyBlog Docker image.
+* **/Dockerfile** - Docker build file for executing MyBlog Docker image.
 Instructions to build artifacts, copy build artifacts to docker image and then run app on proper port with proper configuration file.
 
-## Util Scripts
-
-* **scripts/run_docker.sh.sh** - util script for running MyBlog Docker container using **docker/Dockerfile**
-
 ## Tests
-
 Tests can be run by executing following command from the root of the project:
 
 ```bash
@@ -136,13 +80,13 @@ $ mvn test
 In `/src/main/resources/application.properties` file it is possible to change both
 web interface url path, as well as the datasource url.
 
-Quick start
------------
+Maven Quick start
+------------------
 1. `mvn package`
-2. `java -jar target/MyBLOG-0.0.1-SNAPSHOT.jar`
+2. `java -jar target/myblog.jar`
 3. `use post man to test the below API's `
 4. `Authentication using a X-Auth-Token header for REST APIs`
-5. `base path http://localhost:8080`
+5. `base path http://localhost:9001`
 
 Steps to Generate X-Auth-Token Header Value
 --------------------------------------------
