@@ -158,7 +158,7 @@ Step 3. `X-Auth-Token: 123456`
 | POST    | /createNewPost/          | X-Auth-Token: 123456,Content-Type:application/json| {   "postId": null, "title": "Learn TypeScript in 5 minutes",        "body": "Learn TypeScript in 5 minutes", "createDate": 1537196949706, "status": "Active", "userId": "kamahalingam", "commentId": [] }|                     
 | GET    | /getPost       | X-Auth-Token: 123456,Content-Type:application/json| ?postId=ALL|
 | PUT    | /updatePost/ | X-Auth-Token: 123456,Content-Type:application/json| {   "postId": null, "title": "Learn TypeScript in 5 minutes",        "body": "Learn TypeScript in 5 minutes", "createDate": 1537196949706, "status": "Active", "userId": "kamahalingam", "commentId": [] }|
-| DELETE    | /deletePost     | X-Auth-Token: 123456,Content-Type:application/json|?postId=ALL|
+| DELETE    | /deletePost     | X-Auth-Token: 123456,Content-Type:application/json|?postId=12345|
 
 ## Sequence Diagram
 
