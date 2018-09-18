@@ -150,33 +150,15 @@ Step 1. `use this API /createUserSession to generate the user session`
 Step 2. `once created the user session,  get the sessionId from created session and add to the X-Auth-Token header vlaue`
 Step 3. `X-Auth-Token: 123456`
 
-
 ## Resources
 
-  Method  | Path                   |reqest Header                                      |     request payload
+  Method  | Path                   |reqest Header                                      |     request payload                        
 |-------- |----------------------- |---------------------------------------------------|------------------------------------------------------------------------------  |
-| POST    | /createUserSession/    | Content-Type:application/json                     | {"customerId": "cust2","clientId":"client", "clientSecret":" hello world"} |
-| POST    | /createNewPost/          | X-Auth-Token: 123456,Content-Type:application/json|  {
-        "postId": null,
-        "title": "Learn TypeScript in 5 minutes",
-        "body": "Learn TypeScript in 5 minutes",
-        "createDate": 1537196949706,
-        "status": "Active",
-        "userId": "kamahalingam",
-        "commentId": []
-    }|
-| GET    | /getPost?postId=ALL       | X-Auth-Token: 123456,Content-Type:application/json| |
-| PUT    | /updatePost/ | X-Auth-Token: 123456,Content-Type:application/json|  {
-            "postId": "8704885890584352157",
-            "title": "Learn TypeScript in 5 minutes",
-            "body": "Learn TypeScript in 5 minutes.",
-            "createDate": 1537202023506,
-            "status": "Active",
-            "userId": "kamahalingam",
-            "commentId": []
-        }                       |
-| DELETE    | /deletePost?postId=4271078210261210407     | X-Auth-Token: 123456,Content-Type:application/json|                           |
-
+| POST    | /createUserSession/    | Content-Type:application/json                     | {"customerId": "cust2","clientId":"client", "clientSecret":" hello world"} |                     
+| POST    | /createNewPost/          | X-Auth-Token: 123456,Content-Type:application/json| {   "postId": null, "title": "Learn TypeScript in 5 minutes",        "body": "Learn TypeScript in 5 minutes", "createDate": 1537196949706, "status": "Active", "userId": "kamahalingam", "commentId": [] }|                     
+| GET    | /getPost/       | X-Auth-Token: 123456,Content-Type:application/json| ?postId=ALL|
+| PUT    | /updatePost/ | X-Auth-Token: 123456,Content-Type:application/json| {   "postId": null, "title": "Learn TypeScript in 5 minutes",        "body": "Learn TypeScript in 5 minutes", "createDate": 1537196949706, "status": "Active", "userId": "kamahalingam", "commentId": [] }|
+| DELETE    | /deletePost/     | X-Auth-Token: 123456,Content-Type:application/json|?postId=ALL|
 
 ## Sequence Diagram
 
