@@ -1,26 +1,19 @@
 package com.gemalto.controller;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.concurrent.CompletableFuture;
-
-import com.gemalto.model.Comment;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.gemalto.model.Post;
-import com.gemalto.model.Role;
-import com.gemalto.model.User;
 import com.gemalto.request.UserSessionRequest;
+import com.gemalto.response.ResponseToClient;
+import com.gemalto.service.BlogService;
+import com.gemalto.session.SessionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.*;
 
-import com.gemalto.response.ResponseToClient;
-import com.gemalto.service.BlogService;
-import com.gemalto.session.SessionService;
-import com.fasterxml.jackson.databind.JsonNode;
+import java.util.concurrent.CompletableFuture;
 
 import static com.gemalto.session.impl.SessionServiceImpl.AUTH_HEADER_NAME;
 
@@ -38,7 +31,7 @@ public class MyBlogController {
 
 	@Autowired
 	private SessionService sessionService;
-	
+
 	private final Logger logger = LoggerFactory.getLogger(MyBlogController.class);
 
     /**
