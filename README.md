@@ -139,7 +139,7 @@ web interface url path, as well as the datasource url.
 Quick start
 -----------
 1. `mvn package`
-2. `java -jar target/epayments-0.0.1-SNAPSHOT.jar`
+2. `java -jar target/MyBLOG-0.0.1-SNAPSHOT.jar`
 3. `use post man to test the below API's `
 4. `Authentication using a X-Auth-Token header for REST APIs`
 5. `base path http://localhost:8080`
