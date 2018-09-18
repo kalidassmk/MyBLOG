@@ -104,6 +104,12 @@ Step 3. `X-Auth-Token: 123456`
 | PUT    | /updatePost/ | X-Auth-Token: 123456,Content-Type:application/json| {   "postId": null, "title": "Learn TypeScript in 5 minutes",        "body": "Learn TypeScript in 5 minutes", "createDate": 1537196949706, "status": "Active", "userId": "kamahalingam", "commentId": [] }|
 | DELETE    | /deletePost     | X-Auth-Token: 123456,Content-Type:application/json|?postId=12345|
 
+## Swagger(https://github.com/kalidassmk/MyBLOG/tree/master/Swagger/MyBlog.yaml)
+![image](https://github.com/kalidassmk/MyBLOG/blob/master/design/Swagger.PNG)
+
+## Sonar Code Coverage
+![image](https://github.com/kalidassmk/MyBLOG/blob/master/design/Code_Coverage.PNG)
+
 ## Sequence Diagram
 ![createUserSession](https://github.com/kalidassmk/MyBLOG/blob/master/design/createUserSession.png)
 ![createNewPost](https://github.com/kalidassmk/MyBLOG/blob/master/design/createNewPost.png)
@@ -111,10 +117,5 @@ Step 3. `X-Auth-Token: 123456`
 ![updatePost](https://github.com/kalidassmk/MyBLOG/blob/master/design/updatePost.png)
 ![delete](https://github.com/kalidassmk/MyBLOG/blob/master/design/delete.png)
 
-## Swagger(https://github.com/kalidassmk/MyBLOG/tree/master/Swagger/MyBlog.yaml)
-![image](https://github.com/kalidassmk/MyBLOG/blob/master/design/Swagger.PNG)
-
-## Sonar Code Coverage
-![image](https://github.com/kalidassmk/MyBLOG/blob/master/design/Code_Coverage.PNG)
 
 
