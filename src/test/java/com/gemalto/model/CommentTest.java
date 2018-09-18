@@ -1,5 +1,6 @@
 package com.gemalto.model;
 
+import com.gemalto.request.UserSessionRequest;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -76,7 +77,10 @@ public class CommentTest {
         comment.getId();
         comment.getUserId();
         comment.getPostId();
-
+        UserSessionRequest userSessionRequest = new UserSessionRequest();
+        userSessionRequest.setClientId("");
+        userSessionRequest.setClientSecret("");
+        userSessionRequest.setUserId("");
     }
 }
 
