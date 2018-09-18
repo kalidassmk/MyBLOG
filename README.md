@@ -168,6 +168,7 @@ Step 3. `X-Auth-Token: 123456`
 ![delete](https://github.com/kalidassmk/MyBLOG/blob/master/design/delete.png)
 
 ## Swagger
+![image](https://github.com/kalidassmk/MyBLOG/blob/master/design/Swagger.PNG)
 
-![Swagger](https://github.com/kalidassmk/MyBLOG/blob/master/Swagger/)
+
 
