@@ -5,15 +5,16 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+/**
+ * The type Comment.
+ */
 @Document(collection = "comment")
 public class Comment {
 
     @Id
     private ObjectId _id;
-
 
     private String id;
 
@@ -22,49 +23,98 @@ public class Comment {
 
     private Date createDate;
 
-    @NotNull
-    private Post post;
+    private String postId;
 
-    @NotNull
-    private User user;
+    private String userId;
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public String getId() {
         return id;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
     public void setId(String id) {
         this.id = id;
     }
 
+    /**
+     * Gets body.
+     *
+     * @return the body
+     */
     public String getBody() {
         return body;
     }
 
+    /**
+     * Sets body.
+     *
+     * @param body the body
+     */
     public void setBody(String body) {
         this.body = body;
     }
 
+    /**
+     * Gets create date.
+     *
+     * @return the create date
+     */
     public Date getCreateDate() {
         return createDate;
     }
 
+    /**
+     * Sets create date.
+     *
+     * @param date the date
+     */
     public void setCreateDate(Date date) {
         this.createDate = date;
     }
 
-    public Post getPost() {
-        return post;
+    /**
+     * Gets post id.
+     *
+     * @return the post id
+     */
+    public String getPostId() {
+        return postId;
     }
 
-    public void setPost(Post post) {
-        this.post = post;
+    /**
+     * Sets post id.
+     *
+     * @param postId the post id
+     */
+    public void setPostId(String postId) {
+        this.postId = postId;
     }
 
-    public User getUser() {
-        return user;
+    /**
+     * Gets user id.
+     *
+     * @return the user id
+     */
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    /**
+     * Sets user id.
+     *
+     * @param userId the user id
+     */
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }
+

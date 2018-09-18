@@ -17,7 +17,7 @@ public class MyBlogApplication {
      * @param args the input arguments
      */
     public static void main(String[] args) {
-		//SpringApplication.run(MyBlogApplication.class, args);
+		SpringApplication.run(MyBlogApplication.class, args);
 	}
 
 }

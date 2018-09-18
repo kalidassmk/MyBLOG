@@ -20,7 +20,6 @@ public class Post {
 
     private String postId;
 
-    @NotEmpty(message = "*Please provide title")
     private String title;
 
     private String body;
@@ -29,11 +28,9 @@ public class Post {
 
     private String status;
 
+    private String userId;
 
-    @NotNull
-    private User user;
-
-    private Collection<Comment> comments;
+    private Collection<Comment> commentId;
 
     /**
      * Gets post id.
@@ -108,39 +105,40 @@ public class Post {
     }
 
     /**
-     * Gets user.
+     * Gets user id.
      *
-     * @return the user
+     * @return the user id
      */
-    public User getUser() {
-        return user;
+    @NotNull
+    public String getUserId() {
+        return userId;
     }
 
     /**
-     * Sets user.
+     * Sets user id.
      *
-     * @param user the user
+     * @param userId the user id
      */
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId( String userId) {
+        this.userId = userId;
     }
 
     /**
-     * Gets comments.
+     * Gets commentId.
      *
-     * @return the comments
+     * @return the commentId
      */
-    public Collection<Comment> getComments() {
-        return comments;
+    public Collection<Comment> getCommentId() {
+        return commentId;
     }
 
     /**
-     * Sets comments.
+     * Sets commentId.
      *
-     * @param comments the comments
+     * @param commentId the commentId
      */
-    public void setComments(Collection<Comment> comments) {
-        this.comments = comments;
+    public void setCommentId(Collection<Comment> commentId) {
+        this.commentId = commentId;
     }
 
     /**

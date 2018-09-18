@@ -1,7 +1,6 @@
 package com.gemalto.service.impl;
 
 import com.gemalto.model.Post;
-import com.gemalto.model.User;
 import com.gemalto.repository.MyBlogRepository;
 import com.gemalto.response.PostResponse;
 import com.gemalto.response.PostState;
@@ -44,9 +43,9 @@ public class BlogServiceImplTest {
         post.setPostId("123");
         post.setCreateDate(new Date());
         post.setBody("Java 8 ");
-        post.setComments(new ArrayList<>());
+        post.setCommentId(new ArrayList<>());
         post.setTitle("Java 8");
-        post.setUser(new User());
+        post.setUserId("1234");
         post.setStatus("Active");
 
         CompletableFuture<PostResponse> result = blogServiceImpl.createNewPost(post);

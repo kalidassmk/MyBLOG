@@ -42,17 +42,15 @@ public class CommentTest {
         user.setLastName("");
         user.setName("");
         user.setPassword("");
-        user.setRoles(null);
+        user.setRoleId(null);
         user.setUserId("");
         user.setUsername("");
-        user.setPosts(null);
         user.getActive();
         user.getEmail();
         user.getLastName();
         user.getName();
         user.getPassword();
-        user.getPosts();
-        user.getRoles();
+        user.getRoleId();
         user.getUserId();
         user.getUsername();
 
@@ -60,23 +58,24 @@ public class CommentTest {
         Role role= new Role();
         role.setId("");
         role.setRole("");
-        role.setUsers(new ArrayList<>());
+        role.setUserId(new ArrayList<>());
 
         role.getId();
         role.getRole();
-        role.getUsers();
+        role.getUserId();
 
         comment.setBody("");
         comment.setCreateDate(new Date());
         comment.setId("123");
-        comment.setPost(new Post());
-        comment.setUser(user);
+        comment.setUserId("1234");
+        comment.setPostId("1234");
+
 
         comment.getBody();
         comment.getCreateDate();
         comment.getId();
-        comment.getPost();
-        comment.getUser();
+        comment.getUserId();
+        comment.getPostId();
 
     }
 }

@@ -5,6 +5,8 @@ import com.gemalto.repository.MyBlogRepository;
 import com.gemalto.response.PostResponse;
 import com.gemalto.util.KeyGeneration;
 import com.mongodb.WriteResult;
+import org.bson.Document;
+import org.bson.conversions.Bson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import static com.gemalto.response.PostState.*;
+import static sun.plugin2.util.PojoUtil.toJson;
 
 /**
  * Created by Kalidass Mahalingam on 15/09/2018.
@@ -65,12 +68,12 @@ public class MyBlogRepositoryImpl implements MyBlogRepository {
         return CompletableFuture.supplyAsync(() -> {
             List<Post> postList;
             if ("ALL".equals(postId)) {
+                postList = mongoTemplate.findAll(Post.class);
+            } else {
                 Query query = new Query();
                 Criteria criteria = Criteria.where("postId").in(postId);
                 query.addCriteria(criteria);
                 postList = mongoTemplate.find(query, Post.class);
-            } else {
-                postList = mongoTemplate.findAll(Post.class);
             }
             return postList;
         });
@@ -86,7 +89,10 @@ public class MyBlogRepositoryImpl implements MyBlogRepository {
     public CompletableFuture<PostResponse> updatePost(Post post) {
         logger.info("update Post start.....................");
         return CompletableFuture.supplyAsync(() -> {
-            post.setPostId(KeyGeneration.getPostId());
+            Query query = new Query();
+            Criteria criteria = Criteria.where("postId").is(post.getPostId());
+            query.addCriteria(criteria);
+            mongoTemplate.findAndRemove(query, Post.class);
             mongoTemplate.save(post);
             logger.info("updated Post id {} ", post.getPostId());
             return new PostResponse(post.getPostId(), POST_UPDATED);
