@@ -4,12 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.epayments</groupId>
-    <artifactId>MyBLOG</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>myblog</artifactId>
     <packaging>jar</packaging>
 
-    <name>MyBLOG</name>
-    <description>MyBLOG</description>
+    <name>myblog</name>
+    <description>myblog</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -127,6 +126,7 @@
     </dependencies>
 
     <build>
+        <finalName>myblog</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
