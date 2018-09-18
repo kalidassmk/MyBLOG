@@ -5,8 +5,6 @@ import com.gemalto.repository.MyBlogRepository;
 import com.gemalto.response.PostResponse;
 import com.gemalto.util.KeyGeneration;
 import com.mongodb.WriteResult;
-import org.bson.Document;
-import org.bson.conversions.Bson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +19,6 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import static com.gemalto.response.PostState.*;
-import static sun.plugin2.util.PojoUtil.toJson;
 
 /**
  * Created by Kalidass Mahalingam on 15/09/2018.

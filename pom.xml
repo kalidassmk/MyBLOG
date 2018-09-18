@@ -22,7 +22,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+<!--
         <sonar.jacoco.itReportPath>${project.basedir}/../target/jacoco-it.exec</sonar.jacoco.itReportPath>
+-->
     </properties>
 
 
@@ -150,7 +152,8 @@
         </plugins>
     </build>
 
-    <profiles>
+   <profiles>
+       <!--
         <profile>
             <id>sonar-coverage</id>
             <activation>
@@ -208,7 +211,7 @@
             <properties>
                 <sonar.host.url>http://localhost:9000</sonar.host.url>
             </properties>
-        </profile>
+        </profile>-->
 
     </profiles>
 
