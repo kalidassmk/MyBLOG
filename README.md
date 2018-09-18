@@ -111,7 +111,7 @@ Step 3. `X-Auth-Token: 123456`
 ![updatePost](https://github.com/kalidassmk/MyBLOG/blob/master/design/updatePost.png)
 ![delete](https://github.com/kalidassmk/MyBLOG/blob/master/design/delete.png)
 
-## Swagger
+## Swagger(https://github.com/kalidassmk/MyBLOG/tree/master/Swagger/MyBlog.yaml)
 ![image](https://github.com/kalidassmk/MyBLOG/blob/master/design/Swagger.PNG)
 
 
