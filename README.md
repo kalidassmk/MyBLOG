@@ -161,10 +161,13 @@ Step 3. `X-Auth-Token: 123456`
 | DELETE    | /deletePost     | X-Auth-Token: 123456,Content-Type:application/json|?postId=12345|
 
 ## Sequence Diagram
-
 ![createUserSession](https://github.com/kalidassmk/MyBLOG/blob/master/design/createUserSession.png)
 ![createNewPost](https://github.com/kalidassmk/MyBLOG/blob/master/design/createNewPost.png)
 ![getPost](https://github.com/kalidassmk/MyBLOG/blob/master/design/getPost.png)
 ![updatePost](https://github.com/kalidassmk/MyBLOG/blob/master/design/updatePost.png)
 ![delete](https://github.com/kalidassmk/MyBLOG/blob/master/design/delete.png)
+
+## Swagger
+
+![Swagger](https://github.com/kalidassmk/MyBLOG/blob/master/Swagger/)
 
