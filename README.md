@@ -114,5 +114,7 @@ Step 3. `X-Auth-Token: 123456`
 ## Swagger(https://github.com/kalidassmk/MyBLOG/tree/master/Swagger/MyBlog.yaml)
 ![image](https://github.com/kalidassmk/MyBLOG/blob/master/design/Swagger.PNG)
 
+## Sonar Code Coverage
+![image](https://github.com/kalidassmk/MyBLOG/blob/master/design/Code_Coverage.PNG)
 
 
