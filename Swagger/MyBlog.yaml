@@ -1,0 +1,185 @@
+openapi: 3.0.1
+info:
+  title: MyBLOG API
+  description: This is blog page Micro Service,  Every authenticated user can add new blog posts, update, get and delete the blog post . Non-authenticated users can not access this services.
+  version: '0.1'
+servers:
+  - url: 'http://localhost:9001'
+paths:
+  /createUserSession/:
+    post:
+      summary: "Create user session "
+      description: once created the user session, get the sessionId from created session and add to the X-Auth-Token header vlaue to access the my blog services
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clientId:
+                  type: string
+                customerId:
+                  type: string
+                clientSecret:
+                  type: string
+            examples:
+              '0':
+                value: >-
+                  {"customerId": "cust2","clientId":"client", "clientSecret":"
+                  hello world"}
+              '1':
+                value: >-
+                  {"customerId": "cust2","clientId":"client", "clientSecret":"
+                  hello world"}
+      responses:
+        '200':
+          description: Create user session Response
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                type: object
+              examples: {}
+  /createNewPost:
+    post:
+      summary: "Create a new blog post"
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: X-Auth-Token
+          in: header
+          schema:
+            type: string
+          example: '15372438715216432659073711260339'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                postId:
+                  type: string
+                title:
+                  type: string
+                body:
+                  type: string
+                userId:
+                  type: string
+                createDate:
+                  type: number
+                status:
+                  type: string
+            examples:
+              '0':
+                value: |2-
+                   {
+                              "postId": "4152414780159482570",
+                              "title": "Serverless Architectures with Java 8",
+                              "body": "Serverless Architectures with Java 8",
+                              "createDate": 1537244784508,
+                              "status": "Active",
+                              "userId": "kamahalingam"
+                          }
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                type: object
+              examples: {}             
+              
+  /getPost:
+    get:
+      summary: "Get the blog post by post id or all the blog post"
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: postId
+          in: query
+          schema:
+            type: string
+          example: ALL
+        - name: X-Auth-Token
+          in: header
+          schema:
+            type: string
+          example: '1537244640018980159566371429098'
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                type: object
+              examples: {}            
+  /updatePost:
+    put:
+      summary: "Update the blog post"
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: X-Auth-Token
+          in: header
+          schema:
+            type: string
+          example: '15372438715216432659073711260339'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                postId:
+                  type: string
+                title:
+                  type: string
+                body:
+                  type: string
+                userId:
+                  type: string
+                createDate:
+                  type: number
+                status:
+                  type: string
+            examples:
+              '0':
+                value: |2-
+                   {
+                              "postId": "4152414780159482570",
+                              "title": "Serverless Architectures with Java 8",
+                              "body": "Serverless Architectures with Java 8",
+                              "createDate": 1537244784508,
+                              "status": "Active",
+                              "userId": "kamahalingam"
+                          }
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                type: object
+              examples: {} 
+  /deletePost:
+    delete:
+      summary: "Delete the blog post"
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: postId
+          in: query
+          schema:
+            type: string
+          example: '4152414780159482570'
+        - name: X-Auth-Token
+          in: header
+          schema:
+            type: string
+          example: '15372438715216432659073711260339'
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                type: object
+              examples: {} 
+              
+              
+              
