@@ -135,3 +135,54 @@ $ mvn test
 
 In `/src/main/resources/application.properties` file it is possible to change both
 web interface url path, as well as the datasource url.
+
+Quick start
+-----------
+1. `mvn package`
+2. `java -jar target/epayments-0.0.1-SNAPSHOT.jar`
+3. `use post man to test the below API's `
+4. `Authentication using a X-Auth-Token header for REST APIs`
+5. `base path http://localhost:8080`
+
+Steps to Generate X-Auth-Token Header Value
+--------------------------------------------
+Step 1. `use this API /createUserSession to generate the user session`
+Step 2. `once created the user session,  get the sessionId from created session and add to the X-Auth-Token header vlaue`
+Step 3. `X-Auth-Token: 123456`
+
+
+## Resources
+
+  Method  | Path                   |reqest Header                                      |     request payload
+|-------- |----------------------- |---------------------------------------------------|------------------------------------------------------------------------------  |
+| POST    | /createUserSession/    | Content-Type:application/json                     | {"customerId": "cust2","clientId":"client", "clientSecret":" hello world"} |
+| POST    | /createNewPost/          | X-Auth-Token: 123456,Content-Type:application/json|  {
+        "postId": null,
+        "title": "Learn TypeScript in 5 minutes",
+        "body": "Learn TypeScript in 5 minutes",
+        "createDate": 1537196949706,
+        "status": "Active",
+        "userId": "kamahalingam",
+        "commentId": []
+    }|
+| GET    | /getPost?postId=ALL       | X-Auth-Token: 123456,Content-Type:application/json| |
+| PUT    | /updatePost/ | X-Auth-Token: 123456,Content-Type:application/json|  {
+            "postId": "8704885890584352157",
+            "title": "Learn TypeScript in 5 minutes",
+            "body": "Learn TypeScript in 5 minutes.",
+            "createDate": 1537202023506,
+            "status": "Active",
+            "userId": "kamahalingam",
+            "commentId": []
+        }                       |
+| DELETE    | /deletePost?postId=4271078210261210407     | X-Auth-Token: 123456,Content-Type:application/json|                           |
+
+
+## Sequence Diagram
+
+![createUserSession](https://github.com/kalidassmk/MyBLOG/blob/master/design/createUserSession.png)
+![createNewPost](https://github.com/kalidassmk/MyBLOG/blob/master/design/createNewPost.png)
+![getPost](https://github.com/kalidassmk/MyBLOG/blob/master/design/getPost.png)
+![updatePost](https://github.com/kalidassmk/MyBLOG/blob/master/design/updatePost.png)
+![delete](https://github.com/kalidassmk/MyBLOG/blob/master/design/delete.png)
+
